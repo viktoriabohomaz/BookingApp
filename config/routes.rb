@@ -5,4 +5,5 @@ Rails.application.routes.draw do
               controllers: {omniauth_callbacks: 'omniauth_callbacks'}
               root 'pages#index'
 
+  resources :users, only: [:show]
 end
