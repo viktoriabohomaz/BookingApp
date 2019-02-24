@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2019_02_24_124516) do
   create_table "rooms", force: :cascade do |t|
     t.string "home_type"
     t.string "room_type"
-    t.decimal "accommodate", precision: 15, scale: 2
+    t.integer "accommodate"
     t.integer "bed_room"
     t.integer "bath_room"
     t.string "listing_name"
