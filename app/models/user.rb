@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :omniauthable
   validates :fullname, presence: true, length: { maximum: 50 }
+  has_many :rooms
 
   def self.from_omniauth(auth)
     user = User.where(email: auth.info.email).first
@@ -19,7 +20,7 @@ class User < ApplicationRecord
         user.uid = auth.uid
         user.provider = auth.provider
         user.skip_confirmation!
-      end  
+      end
     end
   end
 end

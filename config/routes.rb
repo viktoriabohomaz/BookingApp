@@ -6,4 +6,14 @@ Rails.application.routes.draw do
               root 'pages#index'
 
   resources :users, only: [:show]
+  resources :rooms, exept: [:edit] do
+    member do
+      get 'listing'
+      get 'pricing'
+      get 'description'
+      get 'photo_upload'
+      get 'amenities'
+      get 'location'
+    end
+  end
 end
